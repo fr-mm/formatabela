@@ -1,0 +1,1 @@
+from src.aplicacao.execoes.excecao_de_aplicacao import ExcecaoDeAplicacao

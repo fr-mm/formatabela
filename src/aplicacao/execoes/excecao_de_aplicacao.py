@@ -1,0 +1,2 @@
+class ExcecaoDeAplicacao(Exception):
+    pass

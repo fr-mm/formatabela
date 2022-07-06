@@ -1,5 +1,6 @@
 from src.infraestrutura.servicos.servico_ler_tabela import ServicoLerTabela
 
-
+# IGNORAR TUDO NESSE ARQUIVO POR ENQUANTO
 ler_tabela = ServicoLerTabela()
-ler_tabela.executar("./tabela_teste.xlsx")
+tabela = ler_tabela.executar("./testes/exemplos/tabela_teste.xlsx")
+[print([celula.cor_fundo for celula in item]) for item in tabela.conteudo]
