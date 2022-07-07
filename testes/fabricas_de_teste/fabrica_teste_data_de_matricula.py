@@ -9,5 +9,3 @@ class FabricaTesteDataDeMatricula(factory.Factory):
         model = DataDeMatricula
 
     valor = Aleatorio.data_string_no_passado()
-
-print(FabricaTesteDataDeMatricula.build().valor)
