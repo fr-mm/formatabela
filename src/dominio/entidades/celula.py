@@ -5,5 +5,5 @@ from dataclasses import dataclass
 class Celula:
     conteudo: str
     comentario: str
-    cor: str
-    largura: int
+    cor_texto: str
+    cor_fundo: str
