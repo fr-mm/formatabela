@@ -29,3 +29,22 @@ class TestTipoDeImovelDeMatricula(TestCase):
 
         texto_esperado = valor
         self.assertEqual(texto, texto_esperado)
+
+    def test_eh_igual_a_QUANDO_eh_igual_ENTAO_retorna_true(self) -> None:
+        valor = EnumTipoDeImovel.URBANO.value
+        tipo_de_imovel_de_matricula1 = TipoDeImovelDeMatricula(valor)
+        tipo_de_imovel_de_matricula2 = TipoDeImovelDeMatricula(valor)
+
+        resultdo = tipo_de_imovel_de_matricula1.eh_igual_a(tipo_de_imovel_de_matricula2)
+
+        self.assertTrue(resultdo)
+
+    def test_eh_igual_a_QUANDO_eh_diferente_ENTAO_retorna_false(self) -> None:
+        valor1 = EnumTipoDeImovel.URBANO.value
+        valor2 = EnumTipoDeImovel.RURAL.value
+        tipo_de_imovel_de_matricula1 = TipoDeImovelDeMatricula(valor1)
+        tipo_de_imovel_de_matricula2 = TipoDeImovelDeMatricula(valor2)
+
+        resultdo = tipo_de_imovel_de_matricula1.eh_igual_a(tipo_de_imovel_de_matricula2)
+
+        self.assertFalse(resultdo)

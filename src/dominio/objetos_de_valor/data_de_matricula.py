@@ -1,21 +1,21 @@
 import re
-from datetime import datetime
+from datetime import datetime, date
 
 from src.dominio.excecoes import ExcecaoDataDeMatriculaInvalida
 from src.dominio.interfaces import AtributoDeMatricula
 
 
 class DataDeMatricula(AtributoDeMatricula):
-    __valor: datetime
+    __valor: date
     __FORMATO_REGEX = r'([0-9]{2})\/([0-9]{2})\/([0-9]{4})'
-    __FORMATO_DATETIME = '%d/%M/%Y'
+    __FORMATO_DATETIME = '%d/%m/%Y'
 
     def __init__(self, valor: str) -> None:
         valor_validado = self.__validar(valor)
         self.__valor = valor_validado
 
     @property
-    def valor(self) -> datetime:
+    def valor(self) -> date:
         return self.__valor
 
     @property
@@ -26,7 +26,7 @@ class DataDeMatricula(AtributoDeMatricula):
     def FORMATO(self) -> str:
         return self.__FORMATO_DATETIME
 
-    def __validar(self, valor: str) -> datetime:
+    def __validar(self, valor: str) -> date:
         valor_com_formato_valido = self.__validar_formato(valor)
         valor_datetime = self.__validar_existencia(valor_com_formato_valido)
         valor_no_passado = self.__validar_no_passado(valor_datetime)
@@ -43,7 +43,7 @@ class DataDeMatricula(AtributoDeMatricula):
         except ValueError:
             raise ExcecaoDataDeMatriculaInvalida(valor)
 
-    def __validar_no_passado(self, valor: datetime) -> datetime:
+    def __validar_no_passado(self, valor: datetime) -> date:
         if not valor < datetime.now():
             raise ExcecaoDataDeMatriculaInvalida(valor.strftime(self.__FORMATO_DATETIME))
-        return valor
+        return valor.date()

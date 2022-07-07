@@ -39,3 +39,22 @@ class TestNumeroDeOrdemDeMatricula(TestCase):
 
         valor_esperado = '1'
         self.assertEqual(texto, valor_esperado)
+
+    def test_eh_igual_a_QUANDO_eh_igual_ENTAO_retorna_true(self) -> None:
+        valor = '1'
+        numero_de_ordem_de_matricula1 = NumeroDeOrdemDeMatricula(valor)
+        numero_de_ordem_de_matricula2 = NumeroDeOrdemDeMatricula(valor)
+
+        resultado = numero_de_ordem_de_matricula1.eh_igual_a(numero_de_ordem_de_matricula2)
+
+        self.assertTrue(resultado)
+
+    def test_eh_igual_a_QUANDO_eh_diferente_ENTAO_retorna_false(self) -> None:
+        valor1 = '1'
+        valor2 = '2'
+        numero_de_ordem_de_matricula1 = NumeroDeOrdemDeMatricula(valor1)
+        numero_de_ordem_de_matricula2 = NumeroDeOrdemDeMatricula(valor2)
+
+        resultado = numero_de_ordem_de_matricula1.eh_igual_a(numero_de_ordem_de_matricula2)
+
+        self.assertFalse(resultado)
