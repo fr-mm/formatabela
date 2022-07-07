@@ -28,6 +28,16 @@ class StringAleatoria:
         return str(numero)
 
     @staticmethod
+    def substituindo_caracter_por_digito(base: str, substituir: str) -> str:
+        resultado = ''
+        for caracter in base:
+            if caracter == substituir:
+                resultado += str(random.randrange(0, 9))
+            else:
+                resultado += caracter
+        return resultado
+
+    @staticmethod
     def __numero_com_dois_digitos(maximo: int) -> str:
         numero = random.randrange(1, maximo)
         return str(numero).rjust(2, '0')

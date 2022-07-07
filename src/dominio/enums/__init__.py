@@ -1,3 +1,4 @@
 from src.dominio.enums.enum_tipo_de_imovel import EnumTipoDeImovel
 from src.dominio.enums.enum_opcoes_compartilhadas import EnumOpcoesCompartilhadas
 from src.dominio.enums.enum_medida_da_area import EnumMedidaDaArea
+from src.dominio.enums.enum_formato_de_inscricao_imobiliaria_municipal import EnumFormatoDeInscricaoImobiliariaMunicipal

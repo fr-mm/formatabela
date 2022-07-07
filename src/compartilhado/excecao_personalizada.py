@@ -1,4 +1,4 @@
-from typing import Iterable
+from typing import Iterable, List
 
 
 class ExcecaoPersonalizada(Exception):
@@ -7,4 +7,10 @@ class ExcecaoPersonalizada(Exception):
 
     @staticmethod
     def formatar_valores_de_enum(enum: Iterable) -> str:
-        return ''.join([f'- {tipo_de_imovel.value}\n' for tipo_de_imovel in enum])
+        valores = [opcao.value for opcao in enum]
+        return ExcecaoPersonalizada.formatar_lista(valores)
+
+    @staticmethod
+    def formatar_lista(lista: List[str]) -> str:
+        return ''.join([f'- {item}\n' for item in lista])
+
