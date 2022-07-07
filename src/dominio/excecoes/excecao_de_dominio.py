@@ -1,3 +1,5 @@
-class ExcecaoDeDominio(Exception):
-    def __init__(self, mensagem: str) -> None:
-        super().__init__(f'\n\n{mensagem}')
+from src.compartilhado.excecoes.excecao_personalizada import ExcecaoPersonalizada
+
+
+class ExcecaoDeDominio(ExcecaoPersonalizada):
+    pass
