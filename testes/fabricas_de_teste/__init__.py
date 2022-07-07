@@ -1,3 +1,4 @@
 from testes.fabricas_de_teste.fabrica_teste_celula_otd import FabricaTesteCelulaOTD
 from testes.fabricas_de_teste.fabrica_teste_celula import FabricaTesteCelula
 from testes.fabricas_de_teste.fabrica_teste_numero_de_ordem_de_matricula import FabricaTesteNumeroDeOrdemDeMatricula
+from testes.fabricas_de_teste.fabrica_teste_data_de_matricula import FabricaTesteDataDeMatricula

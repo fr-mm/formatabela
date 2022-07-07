@@ -20,7 +20,7 @@ class NumeroDeOrdemDeMatricula(AtributoDeMatricula):
     def __validar(self, valor: str) -> int:
         valor_inteiro = self.__validar_inteiro(valor)
         return self.__validar_maior_que_zero(valor_inteiro)
-    
+
     @staticmethod
     def __validar_inteiro(valor: str) -> int:
         try:

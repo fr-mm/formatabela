@@ -1,2 +1,3 @@
 from src.dominio.excecoes.excecao_de_dominio import ExcecaoDeDominio
 from src.dominio.excecoes.excecao_numero_de_ordem_de_matricula_invalido import ExcecaoNumeroDeOrdemDeMatriculaInvalido
+from src.dominio.excecoes.excecao_data_de_matricula_invalida import ExcecaoDataDeMatriculaInvalida
