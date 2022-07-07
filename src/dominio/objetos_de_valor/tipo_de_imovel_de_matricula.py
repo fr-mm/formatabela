@@ -16,7 +16,7 @@ class TipoDeImovelDeMatricula(AtributoDeMatricula):
 
     @property
     def texto(self) -> str:
-        return self.__valor.value
+        return self.valor.value
 
     @staticmethod
     def __validar(valor: str) -> EnumTipoDeImovel:
