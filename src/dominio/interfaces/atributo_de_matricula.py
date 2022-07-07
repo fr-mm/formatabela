@@ -1,5 +1,13 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 
 class AtributoDeMatricula(ABC):
-    pass
+    @property
+    @abstractmethod
+    def valor(self):
+        pass
+
+    @property
+    @abstractmethod
+    def texto(self) -> str:
+        pass
