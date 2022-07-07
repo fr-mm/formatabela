@@ -1,12 +1,13 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+from typing import Any
 
 
 class AtributoDeMatricula(ABC):
     @property
     @abstractmethod
-    def valor(self):
+    def valor(self) -> Any:
         pass
 
     @property
