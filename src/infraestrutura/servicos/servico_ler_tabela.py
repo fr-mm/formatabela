@@ -6,7 +6,7 @@ from openpyxl.workbook.workbook import Workbook
 from openpyxl.worksheet.worksheet import Worksheet
 from openpyxl.cell.cell import Cell
 
-from src.aplicacao.interfaces import InterfaceServicoLerTabela
+from src.dominio.interfaces import InterfaceServicoLerTabela
 from src.dominio.otds import OTDTabelaEntrada, OTDCelulaEntrada
 from src.infraestrutura.enums.enum_servico_ler_tabela import EnumServicoLerTabela
 
