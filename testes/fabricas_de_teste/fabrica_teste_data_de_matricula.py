@@ -1,11 +1,11 @@
 import factory.fuzzy
 
 from src.dominio.objetos_de_valor import DataDeMatricula
-from testes.fabricas_de_teste.aleatorio import Aleatorio
+from testes.fabricas_de_teste.string_aleatoria import StringAleatoria
 
 
 class FabricaTesteDataDeMatricula(factory.Factory):
     class Meta:
         model = DataDeMatricula
 
-    valor = Aleatorio.data_string_no_passado()
+    valor = StringAleatoria.data_no_passado()
