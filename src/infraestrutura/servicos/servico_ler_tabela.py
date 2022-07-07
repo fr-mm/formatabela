@@ -7,15 +7,15 @@ from openpyxl.worksheet.worksheet import Worksheet
 from openpyxl.cell.cell import Cell
 
 from src.dominio.interfaces import InterfaceServicoLerTabela
-from src.dominio.otds import OTDTabelaEntrada, OTDCelulaEntrada
+from src.dominio.otds import OTDTabela, OTDCelula
 from src.infraestrutura.enums.enum_servico_ler_tabela import EnumServicoLerTabela
 
 
 class ServicoLerTabela(InterfaceServicoLerTabela):
-    def executar(self, arquivo: str) -> OTDTabelaEntrada:
+    def executar(self, arquivo: str) -> OTDTabela:
         tabela = self.__ler_tabela(arquivo)
         pagina = self.__extrair_primeira_pagina(tabela)
-        return OTDTabelaEntrada(
+        return OTDTabela(
             nome=self.__extrair_nome(arquivo),
             nome_da_pagina=pagina.title,
             conteudo=self.__extrair_conteudo(pagina)
@@ -35,7 +35,7 @@ class ServicoLerTabela(InterfaceServicoLerTabela):
         sem_extensao = sem_caminho.split('.')[0]
         return sem_extensao
 
-    def __extrair_conteudo(self, pagina: Worksheet) -> List[List[OTDCelulaEntrada]]:
+    def __extrair_conteudo(self, pagina: Worksheet) -> List[List[OTDCelula]]:
         contagem_linhas_preenchidas = self.__contar_conjunto_com_primeira_celula_preenchida(pagina.rows)
         contagem_colunas_preenchidas = self.__contar_conjunto_com_primeira_celula_preenchida(pagina.columns)
 
@@ -57,8 +57,8 @@ class ServicoLerTabela(InterfaceServicoLerTabela):
     def __range(maximo: int) -> range:
         return range(1, maximo + 1)
 
-    def __criar_otd_celula_entrada(self, celula: Cell) -> OTDCelulaEntrada:
-        return OTDCelulaEntrada(
+    def __criar_otd_celula_entrada(self, celula: Cell) -> OTDCelula:
+        return OTDCelula(
             conteudo=self.__extrair_conteudo_da_celula(celula),
             comentario=self.__formatar_comentario(celula.comment),
             cor_fundo=self.__extrair_cor_do_fundo(celula),
