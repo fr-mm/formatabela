@@ -1,7 +1,8 @@
 from src.dominio.excecoes import ExcecaoNumeroDeOrdemDeMatriculaInvalido
+from src.dominio.interfaces import AtributoDeMatricula
 
 
-class NumeroDeOrdemDeMatricula:
+class NumeroDeOrdemDeMatricula(AtributoDeMatricula):
     __valor: int
 
     def __init__(self, valor: str) -> None:
@@ -11,6 +12,10 @@ class NumeroDeOrdemDeMatricula:
     @property
     def valor(self) -> int:
         return self.__valor
+
+    @property
+    def texto(self) -> str:
+        return str(self.valor)
 
     @staticmethod
     def __validar(valor: str) -> int:

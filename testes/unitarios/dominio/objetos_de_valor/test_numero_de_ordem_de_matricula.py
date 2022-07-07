@@ -30,3 +30,12 @@ class TestNumeroDeOrdemDeMatricula(TestCase):
 
         with self.assertRaises(ExcecaoNumeroDeOrdemDeMatriculaInvalido):
             NumeroDeOrdemDeMatricula(valor)
+
+    def test_texto_QUANDO_chamado_ENTAO_retorna_texto_esperado(self) -> None:
+        valor = '1'
+        numero_de_ordem_de_matricula = NumeroDeOrdemDeMatricula(valor)
+
+        texto = numero_de_ordem_de_matricula.texto
+
+        valor_esperado = '1'
+        self.assertEqual(texto, valor_esperado)
