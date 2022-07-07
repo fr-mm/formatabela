@@ -1,0 +1,1 @@
+from src.compartilhado.excecao_personalizada import ExcecaoPersonalizada

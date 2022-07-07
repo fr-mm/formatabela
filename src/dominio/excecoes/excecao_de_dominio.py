@@ -1,4 +1,4 @@
-from src.compartilhado.excecoes.excecao_personalizada import ExcecaoPersonalizada
+from src.compartilhado import ExcecaoPersonalizada
 
 
 class ExcecaoDeDominio(ExcecaoPersonalizada):
