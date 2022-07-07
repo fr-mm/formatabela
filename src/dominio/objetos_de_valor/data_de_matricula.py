@@ -7,7 +7,7 @@ from src.dominio.interfaces import AtributoDeMatricula
 
 class DataDeMatricula(AtributoDeMatricula):
     __valor: date
-    __FORMATO_REGEX = r'([0-9]{2})\/([0-9]{2})\/([0-9]{4})'
+    __FORMATO_REGEX = r'(\d{2})\/(\d{2})\/(\d{4})'
     __FORMATO_DATETIME = '%d/%m/%Y'
 
     def __init__(self, valor: str) -> None:
