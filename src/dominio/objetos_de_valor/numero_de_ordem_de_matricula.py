@@ -17,12 +17,19 @@ class NumeroDeOrdemDeMatricula(AtributoDeMatricula):
     def texto(self) -> str:
         return str(self.valor)
 
+    def __validar(self, valor: str) -> int:
+        valor_inteiro = self.__validar_inteiro(valor)
+        return self.__validar_maior_que_zero(valor_inteiro)
+    
     @staticmethod
-    def __validar(valor: str) -> int:
+    def __validar_inteiro(valor: str) -> int:
         try:
-            valor_inteiro = int(valor)
-            if not valor_inteiro > 0:
-                raise ExcecaoNumeroDeOrdemDeMatriculaInvalido(valor)
-            return valor_inteiro
+            return int(valor)
         except ValueError:
             raise ExcecaoNumeroDeOrdemDeMatriculaInvalido(valor)
+
+    @staticmethod
+    def __validar_maior_que_zero(valor_inteiro: int) -> int:
+        if not valor_inteiro > 0:
+            raise ExcecaoNumeroDeOrdemDeMatriculaInvalido(str(valor_inteiro))
+        return valor_inteiro
