@@ -1,0 +1,2 @@
+from testes.fabricas_de_teste.tabela.fabrica_teste_celula_otd import FabricaTesteCelulaOTD
+from testes.fabricas_de_teste.tabela.fabrica_teste_celula import FabricaTesteCelula

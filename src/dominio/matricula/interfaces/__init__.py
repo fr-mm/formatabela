@@ -1,0 +1,2 @@
+from src.dominio.matricula.interfaces.atributo_de_matricula import AtributoDeMatricula
+from src.dominio.matricula.interfaces.agregado_de_matricula import AgregadoDeMatricula

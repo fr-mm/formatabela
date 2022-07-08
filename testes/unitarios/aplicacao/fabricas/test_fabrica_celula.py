@@ -1,8 +1,8 @@
 from unittest import TestCase
 
 from src.aplicacao.fabricas import FabricaCelula
-from src.dominio.otds import OTDCelula
-from testes.fabricas_de_teste import FabricaTesteCelulaOTD
+from src.dominio.tabela.otds import OTDCelula
+from testes.fabricas_de_teste.tabela import FabricaTesteCelulaOTD
 
 
 class TestFabricaCelula(TestCase):

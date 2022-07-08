@@ -1,5 +1,5 @@
-from src.dominio.entidades import Celula
-from src.dominio.otds import OTDCelula
+from src.dominio.tabela.entidades import Celula
+from src.dominio.tabela.otds import OTDCelula
 
 
 class FabricaCelula:
