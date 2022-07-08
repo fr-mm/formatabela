@@ -9,7 +9,7 @@ class LivroDeTituloAquisitivo:
     __valor: str
 
     def __init__(self, valor: str) -> None:
-        valor_validado = self.__validar(valor.strip())
+        valor_validado = self.__validar(valor)
         valor_formatado = self.__formatar_valor_validado(valor_validado)
         self.__valor = valor_formatado
 
@@ -19,6 +19,7 @@ class LivroDeTituloAquisitivo:
 
     @staticmethod
     def __validar(valor: str) -> str:
+        valor = valor.strip()
         padrao = EnumFormatoTituloAquisitivo.LIVRO.value
         if not re.match(pattern=padrao, string=valor):
             raise ExcecaoLivroDeTituloAquisitivoInvalido(valor)

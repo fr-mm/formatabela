@@ -27,7 +27,7 @@ class StringAleatoria:
         return str(numero)
 
     @staticmethod
-    def randomizar_caracteres(base: str) -> str:
+    def randomizar_caracteres(base: str, digito_minimo: int = 0) -> str:
         """
         Retorna string base substituindo:
         0 por dígito
@@ -36,7 +36,7 @@ class StringAleatoria:
         resultado = ''
         for caracter in base:
             if caracter == '0':
-                resultado += str(random.randrange(0, 9))
+                resultado += str(random.randrange(digito_minimo, 9))
             elif caracter == 'A':
                 resultado += random.choice(string.ascii_uppercase)
             else:

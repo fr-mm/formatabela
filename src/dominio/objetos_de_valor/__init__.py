@@ -7,3 +7,4 @@ from src.dominio.objetos_de_valor.coordenadas_georreferenciadas_de_matricula imp
 from src.dominio.objetos_de_valor.inscricao_imobiliaria_municipal_de_matricula import InscricaoImobiliariaMunicipalDeMatricula
 from src.dominio.objetos_de_valor.cns_de_registro_anterior import CNSDeRegistroAnterior
 from src.dominio.objetos_de_valor.livro_de_titulo_aquisitivo import LivroDeTituloAquisitivo
+from src.dominio.objetos_de_valor.numero_de_ordem_de_livro import NumeroDeOrdemDeLivro

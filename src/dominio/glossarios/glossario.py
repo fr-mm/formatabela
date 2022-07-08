@@ -18,7 +18,7 @@ class Glossario:
         'Livro 0A',
         'Livro 0AA',
     ]
-    exemplos_de_numero_de_ordem_de_livro_de_registro_anterior = [
+    exemplos_de_numero_de_ordem_de_livro = [
         'n° 0',
         'n° 00',
         'n° 000',
