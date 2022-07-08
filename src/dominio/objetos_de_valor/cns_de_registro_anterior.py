@@ -4,23 +4,23 @@ from src.dominio.interfaces import AtributoDeMatricula
 
 
 class CNSDeRegistroAnterior(AtributoDeMatricula):
-    __valor: str
+    __valor: EnumCNSDeRegistroAnterior
 
     def __init__(self, valor: str) -> None:
         valor_validado = self.__validar(valor)
         self.__valor = valor_validado
 
     @property
-    def valor(self):
+    def valor(self) -> EnumCNSDeRegistroAnterior:
         return self.__valor
 
     @property
     def texto(self) -> str:
-        return self.valor
+        return self.valor.value
 
     @staticmethod
-    def __validar(valor) -> str:
+    def __validar(valor) -> EnumCNSDeRegistroAnterior:
         try:
-            return EnumCNSDeRegistroAnterior(valor).value
+            return EnumCNSDeRegistroAnterior(valor)
         except ValueError:
             raise ExcecaoCNSDeRegistroAnteriorInvalido(valor)
