@@ -1,6 +1,7 @@
 from datetime import datetime
 from unittest import TestCase
 
+from src.dominio.enums import EnumFormatoDataDeMatricula
 from src.dominio.excecoes import ExcecaoDataDeMatriculaInvalida
 from src.dominio.objetos_de_valor import DataDeMatricula
 
@@ -11,7 +12,7 @@ class TestDataDeMatricula(TestCase):
 
         data_de_matricula = DataDeMatricula(valor)
 
-        valor_esperado = datetime.strptime(valor, DataDeMatricula.extrair_formato()).date()
+        valor_esperado = datetime.strptime(valor, EnumFormatoDataDeMatricula.DATETIME.value).date()
         self.assertEqual(data_de_matricula.valor, valor_esperado)
 
     def test_init_QUANDO_dia_contem_um_unico_digito_ENTAO_lanca_excecao_data_de_matricula_invalida(self) -> None:

@@ -1,14 +1,13 @@
 import re
 from datetime import datetime, date
 
+from src.dominio.enums import EnumFormatoDataDeMatricula
 from src.dominio.excecoes import ExcecaoDataDeMatriculaInvalida
 from src.dominio.interfaces import AtributoDeMatricula
 
 
 class DataDeMatricula(AtributoDeMatricula):
     __valor: date
-    __FORMATO_REGEX = r'(\d{2})\/(\d{2})\/(\d{4})'
-    __FORMATO_DATETIME = '%d/%m/%Y'
 
     def __init__(self, valor: str) -> None:
         valor_validado = self.__validar(valor)
@@ -20,11 +19,7 @@ class DataDeMatricula(AtributoDeMatricula):
 
     @property
     def texto(self) -> str:
-        return self.valor.strftime(self.__FORMATO_DATETIME)
-
-    @staticmethod
-    def extrair_formato() -> str:
-        return DataDeMatricula.__FORMATO_DATETIME
+        return self.valor.strftime(EnumFormatoDataDeMatricula.DATETIME.value)
 
     def __validar(self, valor: str) -> date:
         valor_com_formato_valido = self.__validar_formato(valor)
@@ -32,18 +27,27 @@ class DataDeMatricula(AtributoDeMatricula):
         valor_no_passado = self.__validar_no_passado(valor_datetime)
         return valor_no_passado
 
-    def __validar_formato(self, valor: str) -> str:
-        if not re.match(pattern=self.__FORMATO_REGEX, string=valor):
+    @staticmethod
+    def __validar_formato(valor: str) -> str:
+        if not re.match(
+                pattern=EnumFormatoDataDeMatricula.REGEX.value,
+                string=valor
+        ):
             raise ExcecaoDataDeMatriculaInvalida(valor)
         return valor
 
-    def __validar_existencia(self, valor: str) -> datetime:
+    @staticmethod
+    def __validar_existencia(valor: str) -> datetime:
         try:
-            return datetime.strptime(valor, self.__FORMATO_DATETIME)
+            return datetime.strptime(
+                valor,
+                EnumFormatoDataDeMatricula.DATETIME.value
+            )
         except ValueError:
             raise ExcecaoDataDeMatriculaInvalida(valor)
 
-    def __validar_no_passado(self, valor: datetime) -> date:
+    @staticmethod
+    def __validar_no_passado(valor: datetime) -> date:
         if not valor < datetime.now():
-            raise ExcecaoDataDeMatriculaInvalida(valor.strftime(self.__FORMATO_DATETIME))
+            raise ExcecaoDataDeMatriculaInvalida(valor.strftime(EnumFormatoDataDeMatricula.DATETIME.value))
         return valor.date()
