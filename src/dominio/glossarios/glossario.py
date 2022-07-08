@@ -13,3 +13,8 @@ class Glossario:
         EnumFormatoInscricaoImobiliariaMunicipalDeMatricula.QUINZE_DIGITOS_SEM_PONTO: '000000000000000',
         EnumFormatoInscricaoImobiliariaMunicipalDeMatricula.QUINZE_DIGITOS_COM_PONTOS: '00.00.000.00000.000'
     }
+    exemplos_de_livro_de_registro_anterior = [
+        'Livro 0',
+        'Livro 0A',
+        'Livro 0AA',
+    ]

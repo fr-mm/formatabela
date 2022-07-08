@@ -27,11 +27,18 @@ class StringAleatoria:
         return str(numero)
 
     @staticmethod
-    def substituindo_caracter_por_digito(base: str, substituir: str) -> str:
+    def randomizar_caracteres(base: str) -> str:
+        """
+        Retorna string base substituindo:
+        0 por dígito
+        A por letra maiúsculas
+        """
         resultado = ''
         for caracter in base:
-            if caracter == substituir:
+            if caracter == '0':
                 resultado += str(random.randrange(0, 9))
+            elif caracter == 'A':
+                resultado += random.choice(string.ascii_uppercase)
             else:
                 resultado += caracter
         return resultado

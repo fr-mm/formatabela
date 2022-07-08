@@ -12,5 +12,6 @@ class FabricaTesteInscricaoImobiliariaMunicipalDeMatricula(factory.Factory):
 
     valor = factory.fuzzy.FuzzyChoice(
         [EnumOpcoesCompartilhadas.AUSENTE.value, EnumOpcoesCompartilhadas.NAO_SE_APLICA.value] +
-        [StringAleatoria.substituindo_caracter_por_digito(base=exemplo, substituir='0') for exemplo in Glossario.inscricao_imobiliaria_municipal.values()]
+        [StringAleatoria.randomizar_caracteres(base=exemplo) for exemplo in Glossario.inscricao_imobiliaria_municipal.values()]
+
     )
