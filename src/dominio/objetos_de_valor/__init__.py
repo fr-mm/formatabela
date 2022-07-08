@@ -8,3 +8,4 @@ from src.dominio.objetos_de_valor.inscricao_imobiliaria_municipal_de_matricula i
 from src.dominio.objetos_de_valor.cns_de_registro_anterior import CNSDeRegistroAnterior
 from src.dominio.objetos_de_valor.livro_de_titulo_aquisitivo import LivroDeTituloAquisitivo
 from src.dominio.objetos_de_valor.numero_de_ordem_de_livro import NumeroDeOrdemDeLivro
+from src.dominio.objetos_de_valor.folha_de_livro import FolhaDeLivro

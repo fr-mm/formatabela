@@ -26,3 +26,11 @@ class Glossario:
         'n° 00.000',
         'n° 000.000',
     ]
+    exemplos_de_folha_de_livro = [
+        'fl. 0',
+        'fl. 00',
+        'fl. 000',
+        'fl. 0 a 0',
+        'fl. 00 a 00',
+        'fl. 000 a 000'
+    ]

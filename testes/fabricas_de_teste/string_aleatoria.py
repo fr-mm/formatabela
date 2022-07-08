@@ -1,4 +1,5 @@
 import random
+import re
 import string
 
 
@@ -42,6 +43,17 @@ class StringAleatoria:
             else:
                 resultado += caracter
         return resultado
+
+    @staticmethod
+    def garantir_numeros_crescentes(texto: str) -> str:
+        numeros = re.findall(r'\d+', texto)
+        if len(numeros) < 2:
+            return texto
+        numeros_ordenados = numeros.copy()
+        numeros_ordenados.sort()
+        for indice in range(len(numeros)):
+            texto.replace(numeros[indice], numeros_ordenados[indice])
+        return texto
 
     @staticmethod
     def __numero_com_dois_digitos(maximo: int) -> str:
