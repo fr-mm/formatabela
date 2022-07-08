@@ -4,3 +4,4 @@ from src.dominio.objetos_de_valor.tipo_de_imovel_de_matricula import TipoDeImove
 from src.dominio.objetos_de_valor.tamanho_da_area import TamanhoDaArea
 from src.dominio.objetos_de_valor.medida_da_area import MedidaDaArea
 from src.dominio.objetos_de_valor.coordenadas_georreferenciadas_de_matricula import CoordenadasGeorreferenciadasDeMatricula
+from src.dominio.objetos_de_valor.inscricao_imobiliaria_municipal_de_matricula import InscricaoImobiliariaMunicipalDeMatricula

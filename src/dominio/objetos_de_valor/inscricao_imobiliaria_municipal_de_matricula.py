@@ -27,7 +27,7 @@ class InscricaoImobiliariaMunicipalDeMatricula(AtributoDeMatricula):
         return self.valor
 
     @staticmethod
-    def OPCOES_COMPARTILHADAS() -> List[str]:
+    def extrair_opcoes_compartilhadas() -> List[str]:
         return InscricaoImobiliariaMunicipalDeMatricula.__OPCOES_COMPARTILHADAS
 
     def __validar(self, valor: str) -> str:

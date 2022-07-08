@@ -11,6 +11,6 @@ class FabricaTesteInscricaoImobiliariaMunicipalDeMatricula(factory.Factory):
         model = InscricaoImobiliariaMunicipalDeMatricula
 
     valor = factory.fuzzy.FuzzyChoice(
-        InscricaoImobiliariaMunicipalDeMatricula.OPCOES_COMPARTILHADAS() +
+        InscricaoImobiliariaMunicipalDeMatricula.extrair_opcoes_compartilhadas() +
         [StringAleatoria.substituindo_caracter_por_digito(base=exemplo, substituir='0') for exemplo in Glossario.inscricao_imobiliaria_municipal.values()]
     )
