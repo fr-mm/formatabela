@@ -1,5 +1,6 @@
 import factory.fuzzy
 
+from src.dominio.enums import EnumOpcoesCompartilhadas
 from src.dominio.glossarios import Glossario
 from src.dominio.objetos_de_valor import InscricaoImobiliariaMunicipalDeMatricula
 from testes.fabricas_de_teste.string_aleatoria import StringAleatoria
@@ -10,6 +11,6 @@ class FabricaTesteInscricaoImobiliariaMunicipalDeMatricula(factory.Factory):
         model = InscricaoImobiliariaMunicipalDeMatricula
 
     valor = factory.fuzzy.FuzzyChoice(
-        InscricaoImobiliariaMunicipalDeMatricula.extrair_opcoes_compartilhadas() +
+        [EnumOpcoesCompartilhadas.AUSENTE.value, EnumOpcoesCompartilhadas.NAO_SE_APLICA.value] +
         [StringAleatoria.substituindo_caracter_por_digito(base=exemplo, substituir='0') for exemplo in Glossario.inscricao_imobiliaria_municipal.values()]
     )
