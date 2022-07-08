@@ -7,12 +7,13 @@ from src.dominio.objetos_de_valor import CoordenadasGeorreferenciadasDeMatricula
 
 
 class TestCoordenadasGeorreferenciadasDeMatricula(TestCase):
-    def test_init_QUANDO_valor_eh_valido_ENTAO_atribui_valor(self) -> None:
+    def test_init_QUANDO_valor_eh_valido_ENTAO_atribui_valor_esperado(self) -> None:
         valor = random.choice([opcao.value for opcao in EnumCoordenadasGeorreferenciadas])
 
         coordenadas_georreferenciadas = CoordenadasGeorreferenciadasDeMatricula(valor)
 
-        self.assertEqual(coordenadas_georreferenciadas.valor, valor)
+        valor_esperado = EnumCoordenadasGeorreferenciadas(valor)
+        self.assertEqual(coordenadas_georreferenciadas.valor, valor_esperado)
 
     def test_init_QUANDO_valor_nao_eh_valido_ENTAO_lanca_excecao_coordenadas_georreferenciadas_invalida(self) -> None:
         valor = 'valor invalido'
