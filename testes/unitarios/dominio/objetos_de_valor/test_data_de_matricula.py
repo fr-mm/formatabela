@@ -11,7 +11,7 @@ class TestDataDeMatricula(TestCase):
 
         data_de_matricula = DataDeMatricula(valor)
 
-        valor_esperado = datetime.strptime(valor, data_de_matricula.FORMATO).date()
+        valor_esperado = datetime.strptime(valor, DataDeMatricula.extrair_formato()).date()
         self.assertEqual(data_de_matricula.valor, valor_esperado)
 
     def test_init_QUANDO_dia_contem_um_unico_digito_ENTAO_lanca_excecao_data_de_matricula_invalida(self) -> None:

@@ -22,9 +22,9 @@ class DataDeMatricula(AtributoDeMatricula):
     def texto(self) -> str:
         return self.valor.strftime(self.__FORMATO_DATETIME)
 
-    @property
-    def FORMATO(self) -> str:
-        return self.__FORMATO_DATETIME
+    @staticmethod
+    def extrair_formato() -> str:
+        return DataDeMatricula.__FORMATO_DATETIME
 
     def __validar(self, valor: str) -> date:
         valor_com_formato_valido = self.__validar_formato(valor)
