@@ -18,3 +18,11 @@ class Glossario:
         'Livro 0A',
         'Livro 0AA',
     ]
+    exemplos_de_numero_de_ordem_de_livro_de_registro_anterior = [
+        'n° 0',
+        'n° 00',
+        'n° 000',
+        'n° 0.000',
+        'n° 00.000',
+        'n° 000.000',
+    ]

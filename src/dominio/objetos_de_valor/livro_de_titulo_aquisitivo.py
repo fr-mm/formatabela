@@ -1,11 +1,11 @@
 import re
 from typing import List
 
-from src.dominio.enums import EnumFormatoTituloAquisitivoDeRegistroAnterior
-from src.dominio.excecoes import ExcecaoLivroDeRegistroAnteriorInvalido
+from src.dominio.enums import EnumFormatoTituloAquisitivo
+from src.dominio.excecoes import ExcecaoLivroDeTituloAquisitivoInvalido
 
 
-class LivroDeRegistroAnterior:
+class LivroDeTituloAquisitivo:
     __valor: str
 
     def __init__(self, valor: str) -> None:
@@ -19,9 +19,9 @@ class LivroDeRegistroAnterior:
 
     @staticmethod
     def __validar(valor: str) -> str:
-        padrao = EnumFormatoTituloAquisitivoDeRegistroAnterior.LIVRO.value
+        padrao = EnumFormatoTituloAquisitivo.LIVRO.value
         if not re.match(pattern=padrao, string=valor):
-            raise ExcecaoLivroDeRegistroAnteriorInvalido(valor)
+            raise ExcecaoLivroDeTituloAquisitivoInvalido(valor)
         return valor
 
     def __formatar_valor_validado(self, valor: str) -> str:
