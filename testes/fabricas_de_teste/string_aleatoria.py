@@ -1,6 +1,5 @@
 import random
 import string
-from typing import List, Tuple
 
 
 class StringAleatoria:

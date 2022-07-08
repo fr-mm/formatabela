@@ -1,8 +1,7 @@
 import factory.fuzzy
 
 from src.dominio.glossarios import Glossario
-from src.dominio.objetos_de_valor.inscricao_imobiliaria_municipal_de_matricula import \
-    InscricaoImobiliariaMunicipalDeMatricula
+from src.dominio.objetos_de_valor import InscricaoImobiliariaMunicipalDeMatricula
 from testes.fabricas_de_teste.string_aleatoria import StringAleatoria
 
 

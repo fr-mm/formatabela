@@ -2,8 +2,7 @@ import re
 from typing import List
 
 from src.dominio.enums import EnumOpcoesCompartilhadas, EnumFormatoDeInscricaoImobiliariaMunicipal
-from src.dominio.excecoes.excecao_inscricao_imobiliaria_municipal_invalida import \
-    ExcecaoInscricaoImobiliariaMunicipalInvalida
+from src.dominio.excecoes import ExcecaoInscricaoImobiliariaMunicipalInvalida
 from src.dominio.interfaces import AtributoDeMatricula
 
 

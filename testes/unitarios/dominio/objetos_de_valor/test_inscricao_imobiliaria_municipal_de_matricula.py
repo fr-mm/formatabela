@@ -1,9 +1,7 @@
 from unittest import TestCase
 
-from src.dominio.excecoes.excecao_inscricao_imobiliaria_municipal_invalida import \
-    ExcecaoInscricaoImobiliariaMunicipalInvalida
-from src.dominio.objetos_de_valor.inscricao_imobiliaria_municipal_de_matricula import \
-    InscricaoImobiliariaMunicipalDeMatricula
+from src.dominio.excecoes import ExcecaoInscricaoImobiliariaMunicipalInvalida
+from src.dominio.objetos_de_valor import InscricaoImobiliariaMunicipalDeMatricula
 
 
 class TestInscricaoImobiliariaMunicipalDeMatricula(TestCase):
