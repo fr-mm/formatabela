@@ -1,4 +1,4 @@
-from src.dominio.excecoes import ExcecaoNumeroDeOrdemDeMatriculaInvalido
+from src.dominio.excecoes import ExcecaoNumeroDeOrdemDeMatricula
 from src.dominio.interfaces import AtributoDeMatricula
 
 
@@ -26,10 +26,10 @@ class NumeroDeOrdemDeMatricula(AtributoDeMatricula):
         try:
             return int(valor)
         except ValueError:
-            raise ExcecaoNumeroDeOrdemDeMatriculaInvalido(valor)
+            raise ExcecaoNumeroDeOrdemDeMatricula(valor)
 
     @staticmethod
     def __validar_maior_que_zero(valor_inteiro: int) -> int:
         if not valor_inteiro > 0:
-            raise ExcecaoNumeroDeOrdemDeMatriculaInvalido(str(valor_inteiro))
+            raise ExcecaoNumeroDeOrdemDeMatricula(str(valor_inteiro))
         return valor_inteiro

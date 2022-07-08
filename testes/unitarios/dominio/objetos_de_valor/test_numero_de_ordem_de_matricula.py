@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.dominio.excecoes import ExcecaoNumeroDeOrdemDeMatriculaInvalido
+from src.dominio.excecoes import ExcecaoNumeroDeOrdemDeMatricula
 from src.dominio.objetos_de_valor import NumeroDeOrdemDeMatricula
 
 
@@ -16,19 +16,19 @@ class TestNumeroDeOrdemDeMatricula(TestCase):
     def test_init_QUANDO_valor_nao_eh_maior_que_zero_ENTAO_lanca_excessao_de_numero_de_ordem_de_matricula(self) -> None:
         valor = '0'
 
-        with self.assertRaises(ExcecaoNumeroDeOrdemDeMatriculaInvalido):
+        with self.assertRaises(ExcecaoNumeroDeOrdemDeMatricula):
             NumeroDeOrdemDeMatricula(valor)
 
     def test_init_QUANDO_valor_nao_eh_numerico_ENTAO_lanca_excessao_de_numero_de_ordem_de_matricula(self) -> None:
         valor = 'a'
 
-        with self.assertRaises(ExcecaoNumeroDeOrdemDeMatriculaInvalido):
+        with self.assertRaises(ExcecaoNumeroDeOrdemDeMatricula):
             NumeroDeOrdemDeMatricula(valor)
 
     def test_init_QUANDO_valor_nao_eh_inteiro_ENTAO_lanca_excessao_de_numero_de_ordem_de_matricula(self) -> None:
         valor = '1.2'
 
-        with self.assertRaises(ExcecaoNumeroDeOrdemDeMatriculaInvalido):
+        with self.assertRaises(ExcecaoNumeroDeOrdemDeMatricula):
             NumeroDeOrdemDeMatricula(valor)
 
     def test_texto_QUANDO_chamado_ENTAO_retorna_texto_esperado(self) -> None:

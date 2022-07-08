@@ -1,5 +1,5 @@
 from src.dominio.enums import EnumMedidaDaArea
-from src.dominio.excecoes import ExcecaoMedidaDaAreaInvalida
+from src.dominio.excecoes import ExcecaoMedidaDaArea
 from src.dominio.interfaces import AtributoDeMatricula
 
 
@@ -23,4 +23,4 @@ class MedidaDaArea(AtributoDeMatricula):
         try:
             return EnumMedidaDaArea(valor)
         except ValueError:
-            raise ExcecaoMedidaDaAreaInvalida(valor)
+            raise ExcecaoMedidaDaArea(valor)

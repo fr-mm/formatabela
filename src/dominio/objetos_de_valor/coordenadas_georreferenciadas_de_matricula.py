@@ -1,5 +1,5 @@
 from src.dominio.enums import EnumCoordenadasGeorreferenciadas
-from src.dominio.excecoes import ExcecaoCoordenadasGeorreferenciadasInvalida
+from src.dominio.excecoes import ExcecaoCoordenadasGeorreferenciadas
 from src.dominio.interfaces import AtributoDeMatricula
 
 
@@ -24,4 +24,4 @@ class CoordenadasGeorreferenciadasDeMatricula(AtributoDeMatricula):
         try:
             return EnumCoordenadasGeorreferenciadas(valor)
         except ValueError:
-            raise ExcecaoCoordenadasGeorreferenciadasInvalida(valor)
+            raise ExcecaoCoordenadasGeorreferenciadas(valor)

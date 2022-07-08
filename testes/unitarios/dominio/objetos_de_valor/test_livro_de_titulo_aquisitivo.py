@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.dominio.excecoes import ExcecaoLivroDeTituloAquisitivoInvalido
+from src.dominio.excecoes import ExcecaoLivroDeTituloAquisitivo
 from src.dominio.objetos_de_valor.livro_de_titulo_aquisitivo import LivroDeTituloAquisitivo
 
 
@@ -87,17 +87,17 @@ class TestLivroDeTituloAquisitivo(TestCase):
     def test_init_QUANDO_livro_esta_escrito_errado_ENTAO_lanca_excecao_livro_de_registro_anterior_invalido(self) -> None:
         valor = 'Livo 3'
 
-        with self.assertRaises(ExcecaoLivroDeTituloAquisitivoInvalido):
+        with self.assertRaises(ExcecaoLivroDeTituloAquisitivo):
             LivroDeTituloAquisitivo(valor)
 
     def test_init_QUANDO_numeracao_nao_tem_numero_ENTAO_lanca_excecao_livro_de_registro_anterior_invalido(self) -> None:
         valor = 'Livro A'
 
-        with self.assertRaises(ExcecaoLivroDeTituloAquisitivoInvalido):
+        with self.assertRaises(ExcecaoLivroDeTituloAquisitivo):
             LivroDeTituloAquisitivo(valor)
 
     def test_init_QUANDO_numeracao_nao_existe_ENTAO_lanca_excecao_livro_de_registro_anterior_invalido(self) -> None:
         valor = 'Livro'
 
-        with self.assertRaises(ExcecaoLivroDeTituloAquisitivoInvalido):
+        with self.assertRaises(ExcecaoLivroDeTituloAquisitivo):
             LivroDeTituloAquisitivo(valor)

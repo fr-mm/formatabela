@@ -2,7 +2,7 @@ from src.dominio.enums import EnumTipoDeImovel
 from src.dominio.excecoes import ExcecaoDeDominio
 
 
-class ExcecaoTipoDeImovelDeMatriculaInvalido(ExcecaoDeDominio):
+class ExcecaoTipoDeImovelDeMatricula(ExcecaoDeDominio):
     def __init__(self, valor: str) -> None:
         opcoes = self.formatar_valores_de_enum(EnumTipoDeImovel)
         mensagem = f'Tipo de imóvel inválido: {valor}' \

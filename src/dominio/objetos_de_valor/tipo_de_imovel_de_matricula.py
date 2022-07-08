@@ -1,5 +1,5 @@
 from src.dominio.enums import EnumTipoDeImovel
-from src.dominio.excecoes import ExcecaoTipoDeImovelDeMatriculaInvalido
+from src.dominio.excecoes import ExcecaoTipoDeImovelDeMatricula
 from src.dominio.interfaces import AtributoDeMatricula
 
 
@@ -23,4 +23,4 @@ class TipoDeImovelDeMatricula(AtributoDeMatricula):
         try:
             return EnumTipoDeImovel(valor)
         except ValueError:
-            raise ExcecaoTipoDeImovelDeMatriculaInvalido(valor)
+            raise ExcecaoTipoDeImovelDeMatricula(valor)

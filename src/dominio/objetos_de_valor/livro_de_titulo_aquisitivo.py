@@ -2,7 +2,7 @@ import re
 from typing import List
 
 from src.dominio.enums import EnumFormatoTituloAquisitivo
-from src.dominio.excecoes import ExcecaoLivroDeTituloAquisitivoInvalido
+from src.dominio.excecoes import ExcecaoLivroDeTituloAquisitivo
 
 
 class LivroDeTituloAquisitivo:
@@ -22,7 +22,7 @@ class LivroDeTituloAquisitivo:
         valor = valor.strip()
         padrao = EnumFormatoTituloAquisitivo.LIVRO.value
         if not re.match(pattern=padrao, string=valor):
-            raise ExcecaoLivroDeTituloAquisitivoInvalido(valor)
+            raise ExcecaoLivroDeTituloAquisitivo(valor)
         return valor
 
     def __formatar_valor_validado(self, valor: str) -> str:

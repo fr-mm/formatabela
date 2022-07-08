@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.dominio.excecoes import ExcecaoTamanhoDaAreaInvalido
+from src.dominio.excecoes import ExcecaoTamanhoDaArea
 from src.dominio.objetos_de_valor import TamanhoDaArea
 
 
@@ -40,7 +40,7 @@ class TestTamanhoDaArea(TestCase):
     def test_init_QUANDO_valor_contem_letra_ENTAO_lanca_excessao_tamanho_de_area_invalido(self) -> None:
         valor = '1e23'
 
-        with self.assertRaises(ExcecaoTamanhoDaAreaInvalido):
+        with self.assertRaises(ExcecaoTamanhoDaArea):
             TamanhoDaArea(valor)
 
     def test_texto_QUANDO_chamado_ENTAO_retorna_texto_esperado(self) -> None:

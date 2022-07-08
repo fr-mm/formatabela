@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.dominio.excecoes import ExcecaoInscricaoImobiliariaMunicipalInvalida
+from src.dominio.excecoes import ExcecaoInscricaoImobiliariaMunicipal
 from src.dominio.objetos_de_valor import InscricaoImobiliariaMunicipalDeMatricula
 
 
@@ -50,7 +50,7 @@ class TestInscricaoImobiliariaMunicipalDeMatricula(TestCase):
     def test_init_QUANTO_valor_eh_invalido_ENTAO_lanca_excecao_inscricao_imobiliaria_municipal_invalida(self) -> None:
         valor = 'valor invalido'
 
-        with self.assertRaises(ExcecaoInscricaoImobiliariaMunicipalInvalida):
+        with self.assertRaises(ExcecaoInscricaoImobiliariaMunicipal):
             InscricaoImobiliariaMunicipalDeMatricula(valor)
 
     def test_texto_QUANTO_chamada_ENTAO_retorna_texto_esperado(self) -> None:

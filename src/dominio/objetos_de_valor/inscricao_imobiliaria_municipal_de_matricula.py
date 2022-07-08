@@ -1,7 +1,7 @@
 import re
 
 from src.dominio.enums import EnumFormatoInscricaoImobiliariaMunicipalDeMatricula
-from src.dominio.excecoes import ExcecaoInscricaoImobiliariaMunicipalInvalida
+from src.dominio.excecoes import ExcecaoInscricaoImobiliariaMunicipal
 from src.dominio.interfaces import AtributoDeMatricula
 
 
@@ -26,5 +26,5 @@ class InscricaoImobiliariaMunicipalDeMatricula(AtributoDeMatricula):
         for formato in formatos:
             if re.match(formato, valor):
                 return valor
-        raise ExcecaoInscricaoImobiliariaMunicipalInvalida(valor)
+        raise ExcecaoInscricaoImobiliariaMunicipal(valor)
 

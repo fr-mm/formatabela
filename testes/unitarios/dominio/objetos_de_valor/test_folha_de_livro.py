@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.dominio.excecoes import ExcecaoFolhaDeLivroInvalida
+from src.dominio.excecoes import ExcecaoFolhaDeLivro
 from src.dominio.objetos_de_valor import FolhaDeLivro
 
 
@@ -38,11 +38,11 @@ class TestFolhaDeLivro(TestCase):
     def test_init_QUANDO_fl_escrito_errado_ENTAO_lanca_excecao_folha_de_livro_invalda(self) -> None:
         valor = 'fi. 1'
 
-        with self.assertRaises(ExcecaoFolhaDeLivroInvalida):
+        with self.assertRaises(ExcecaoFolhaDeLivro):
             FolhaDeLivro(valor)
 
     def test_init_QUANDO_falta_letra_entr_numeros_nao_eh_e_nem_a_ENTAO_lanca_excecao_folha_de_livro_invalda(self) -> None:
         valor = 'fi. 1 o 2'
 
-        with self.assertRaises(ExcecaoFolhaDeLivroInvalida):
+        with self.assertRaises(ExcecaoFolhaDeLivro):
             FolhaDeLivro(valor)

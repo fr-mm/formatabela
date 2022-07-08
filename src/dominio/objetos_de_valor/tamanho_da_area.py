@@ -1,6 +1,6 @@
 import re
 
-from src.dominio.excecoes import ExcecaoTamanhoDaAreaInvalido
+from src.dominio.excecoes import ExcecaoTamanhoDaArea
 from src.dominio.interfaces import AtributoDeMatricula
 
 
@@ -28,7 +28,7 @@ class TamanhoDaArea(AtributoDeMatricula):
 
     def __validar_caracteres(self, valor: str) -> str:
         if not re.match(self.__PADRAO_REGEX, valor):
-            raise ExcecaoTamanhoDaAreaInvalido(valor)
+            raise ExcecaoTamanhoDaArea(valor)
         return valor
 
     @staticmethod
@@ -39,10 +39,10 @@ class TamanhoDaArea(AtributoDeMatricula):
             valor_float = float(valor_com_ponto)
             return round(valor_float, 4)
         except ValueError:
-            raise ExcecaoTamanhoDaAreaInvalido(valor)
+            raise ExcecaoTamanhoDaArea(valor)
 
     @staticmethod
     def __validar_positivo(valor: float) -> float:
         if valor < 0:
-            raise ExcecaoTamanhoDaAreaInvalido(str(valor))
+            raise ExcecaoTamanhoDaArea(str(valor))
         return valor

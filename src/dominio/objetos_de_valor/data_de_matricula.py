@@ -2,7 +2,7 @@ import re
 from datetime import datetime, date
 
 from src.dominio.enums import EnumFormatoDataDeMatricula
-from src.dominio.excecoes import ExcecaoDataDeMatriculaInvalida
+from src.dominio.excecoes import ExcecaoDataDeMatricula
 from src.dominio.interfaces import AtributoDeMatricula
 
 
@@ -33,7 +33,7 @@ class DataDeMatricula(AtributoDeMatricula):
                 pattern=EnumFormatoDataDeMatricula.REGEX.value,
                 string=valor
         ):
-            raise ExcecaoDataDeMatriculaInvalida(valor)
+            raise ExcecaoDataDeMatricula(valor)
         return valor
 
     @staticmethod
@@ -44,10 +44,10 @@ class DataDeMatricula(AtributoDeMatricula):
                 EnumFormatoDataDeMatricula.DATETIME.value
             )
         except ValueError:
-            raise ExcecaoDataDeMatriculaInvalida(valor)
+            raise ExcecaoDataDeMatricula(valor)
 
     @staticmethod
     def __validar_no_passado(valor: datetime) -> date:
         if not valor < datetime.now():
-            raise ExcecaoDataDeMatriculaInvalida(valor.strftime(EnumFormatoDataDeMatricula.DATETIME.value))
+            raise ExcecaoDataDeMatricula(valor.strftime(EnumFormatoDataDeMatricula.DATETIME.value))
         return valor.date()

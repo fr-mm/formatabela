@@ -1,7 +1,7 @@
 import re
 
 from src.dominio.enums import EnumFormatoTituloAquisitivo
-from src.dominio.excecoes import ExcecaoNumeroDeOrdemDeLivroInvalido
+from src.dominio.excecoes import ExcecaoNumeroDeOrdemDeLivro
 
 
 class NumeroDeOrdemDeLivro:
@@ -20,10 +20,10 @@ class NumeroDeOrdemDeLivro:
         valor = valor.strip()
         padrao = EnumFormatoTituloAquisitivo.NUMERO_DE_ORDEM_DE_LIVRO.value
         if not re.match(pattern=padrao, string=valor):
-            raise ExcecaoNumeroDeOrdemDeLivroInvalido(valor)
+            raise ExcecaoNumeroDeOrdemDeLivro(valor)
         primeiro_digito = valor[self.__extrair_indice_do_primeiro_digito(valor)]
         if primeiro_digito == '0':
-            raise ExcecaoNumeroDeOrdemDeLivroInvalido(valor)
+            raise ExcecaoNumeroDeOrdemDeLivro(valor)
         return valor
 
     def __formatar(self, valor: str) -> str:

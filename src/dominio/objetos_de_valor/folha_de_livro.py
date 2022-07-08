@@ -1,7 +1,7 @@
 import re
 
 from src.dominio.enums import EnumFormatoTituloAquisitivo
-from src.dominio.excecoes import ExcecaoFolhaDeLivroInvalida
+from src.dominio.excecoes import ExcecaoFolhaDeLivro
 
 
 class FolhaDeLivro:
@@ -20,7 +20,7 @@ class FolhaDeLivro:
         valor = valor.strip()
         padrao = EnumFormatoTituloAquisitivo.FOLHA_DE_LIVRO.value
         if not re.match(pattern=padrao, string=valor):
-            raise ExcecaoFolhaDeLivroInvalida(valor)
+            raise ExcecaoFolhaDeLivro(valor)
         numeros = re.findall(r'\d+', valor)
         formatado = f'fl. {numeros[0]}'
         if len(numeros) == 2:

@@ -2,7 +2,7 @@ from datetime import datetime
 from unittest import TestCase
 
 from src.dominio.enums import EnumFormatoDataDeMatricula
-from src.dominio.excecoes import ExcecaoDataDeMatriculaInvalida
+from src.dominio.excecoes import ExcecaoDataDeMatricula
 from src.dominio.objetos_de_valor import DataDeMatricula
 
 
@@ -18,31 +18,31 @@ class TestDataDeMatricula(TestCase):
     def test_init_QUANDO_dia_contem_um_unico_digito_ENTAO_lanca_excecao_data_de_matricula_invalida(self) -> None:
         valor = '1/10/1990'
 
-        with self.assertRaises(ExcecaoDataDeMatriculaInvalida):
+        with self.assertRaises(ExcecaoDataDeMatricula):
             DataDeMatricula(valor)
 
     def test_init_QUANDO_valor_contem_letras_ENTAO_lanca_excecao_data_de_matricula_invalida(self) -> None:
         valor = '10/outubro/1990'
 
-        with self.assertRaises(ExcecaoDataDeMatriculaInvalida):
+        with self.assertRaises(ExcecaoDataDeMatricula):
             DataDeMatricula(valor)
 
     def test_init_QUANDO_ano_contem_somente_dois_digitos_ENTAO_lanca_excecao_data_de_matricula_invalida(self) -> None:
         valor = '10/10/90'
 
-        with self.assertRaises(ExcecaoDataDeMatriculaInvalida):
+        with self.assertRaises(ExcecaoDataDeMatricula):
             DataDeMatricula(valor)
 
     def test_init_QUANDO_data_nao_existe_ENTAO_lanca_excecao_data_de_matricula_invalida(self) -> None:
         valor = '40/10/1990'
 
-        with self.assertRaises(ExcecaoDataDeMatriculaInvalida):
+        with self.assertRaises(ExcecaoDataDeMatricula):
             DataDeMatricula(valor)
 
     def test_init_QUANDO_data_esta_no_futuro_ENTAO_lanca_excecao_data_de_matricula_invalida(self) -> None:
         valor = '10/10/2100'
 
-        with self.assertRaises(ExcecaoDataDeMatriculaInvalida):
+        with self.assertRaises(ExcecaoDataDeMatricula):
             DataDeMatricula(valor)
 
     def test_texto_QUANDO_chamado_ENTAO_retorna_texto_esperado(self) -> None:

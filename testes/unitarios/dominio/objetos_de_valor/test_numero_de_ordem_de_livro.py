@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.dominio.excecoes import ExcecaoNumeroDeOrdemDeLivroInvalido
+from src.dominio.excecoes import ExcecaoNumeroDeOrdemDeLivro
 from src.dominio.objetos_de_valor import NumeroDeOrdemDeLivro
 
 
@@ -47,12 +47,12 @@ class TestNumeroDeOrdemDeLivro(TestCase):
     def test_init_QUANDO_valor_nao_eh_valido_ENTAO_lanca_excecao_numero_de_ordem_de_livro_invalido(self) -> None:
         valor = 'valor invalido'
 
-        with self.assertRaises(ExcecaoNumeroDeOrdemDeLivroInvalido):
+        with self.assertRaises(ExcecaoNumeroDeOrdemDeLivro):
             NumeroDeOrdemDeLivro(valor)
 
     def test_init_QUANDO_numero_comeca_com_zero_ENTAO_lanca_excecao_numero_de_ordem_de_livro_invalido(self) -> None:
         valor = 'n° 010'
 
-        with self.assertRaises(ExcecaoNumeroDeOrdemDeLivroInvalido):
+        with self.assertRaises(ExcecaoNumeroDeOrdemDeLivro):
             NumeroDeOrdemDeLivro(valor)
 

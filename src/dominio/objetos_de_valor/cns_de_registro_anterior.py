@@ -1,5 +1,5 @@
 from src.dominio.enums import EnumCNSDeRegistroAnterior
-from src.dominio.excecoes import ExcecaoCNSDeRegistroAnteriorInvalido
+from src.dominio.excecoes import ExcecaoCNSDeRegistroAnterior
 from src.dominio.interfaces import AtributoDeMatricula
 
 
@@ -23,4 +23,4 @@ class CNSDeRegistroAnterior(AtributoDeMatricula):
         try:
             return EnumCNSDeRegistroAnterior(valor)
         except ValueError:
-            raise ExcecaoCNSDeRegistroAnteriorInvalido(valor)
+            raise ExcecaoCNSDeRegistroAnterior(valor)
