@@ -3,3 +3,4 @@ from src.dominio.enums.enum_opcoes_compartilhadas import EnumOpcoesCompartilhada
 from src.dominio.enums.enum_medida_da_area import EnumMedidaDaArea
 from src.dominio.enums.enum_formato_de_inscricao_imobiliaria_municipal import EnumFormatoDeInscricaoImobiliariaMunicipal
 from src.dominio.enums.enum_coordenadas_georreferenciadas import EnumCoordenadasGeorreferenciadas
+from src.dominio.enums.enum_cns_de_registro_anterior import EnumCNSDeRegistroAnterior
