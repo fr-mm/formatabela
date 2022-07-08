@@ -4,7 +4,7 @@ from src.dominio.interfaces import AtributoDeMatricula
 
 
 class MedidaDaArea(AtributoDeMatricula):
-    __valor = str
+    __valor: EnumMedidaDaArea
 
     def __init__(self, valor: str) -> None:
         valor_validado = self.__validar(valor)

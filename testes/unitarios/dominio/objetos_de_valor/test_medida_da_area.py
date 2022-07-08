@@ -27,5 +27,4 @@ class TestMedidaDaArea(TestCase):
 
         texto = medida_da_area.texto
 
-        texto_esperado = valor
-        self.assertEqual(texto, texto_esperado)
+        self.assertEqual(texto, valor)
